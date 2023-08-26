@@ -1,0 +1,51 @@
+import java.util.Scanner;
+
+public class Conditional_Statements {
+    public static void main(String[] args) {
+        
+//        Scanner sc=new Scanner(System.in);
+//        int n=sc.nextInt();
+//        if (n%2==0){
+//            System.out.println("The number is even ");
+//        }
+//        else
+//        {
+//            System.out.println("The number is odd ");
+//        }
+
+//        int age;
+//        Scanner sc = new Scanner(System.in);
+//        System.out.println("Enter your age :");
+//        age= sc.nextInt();
+//        if (age<=50 && age>=18){
+//            System.out.println("Young");
+//        } else if (age<=17 && age>=1)
+//        {
+//            System.out.println("Child");
+//
+//        }
+//        else {
+//            System.out.println("Old");
+//        }
+Grades checking
+        int m1,m2,m3,Total,avg;
+        Scanner sc=new Scanner(System.in);
+        System.out.println("Enter your marks :");
+        m1= sc.nextInt();
+        m2= sc.nextInt();
+        m3= sc.nextInt();
+        avg=(m1+m2+m3)/3;
+        if (avg>=70){
+            System.out.println("A");
+        } else if (avg>=60 && avg<70) {
+            System.out.println("B");
+        } else if (avg<=50 && avg<60) {
+            System.out.println("C");
+        } else if (avg<=40 && avg<50) {
+            System.out.println("D");
+        }
+        else {
+            System.out.println("Fail");
+        }
+    }
+}
