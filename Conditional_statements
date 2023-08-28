@@ -27,7 +27,7 @@ public class Conditional_Statements {
 //        else {
 //            System.out.println("Old");
 //        }
-Grades checking
+*GRADES CHECKING*
         int m1,m2,m3,Total,avg;
         Scanner sc=new Scanner(System.in);
         System.out.println("Enter your marks :");
@@ -47,5 +47,78 @@ Grades checking
         else {
             System.out.println("Fail");
         }
+    }
+}
+*NAME OF A DAY BASED NUMBER*
+import java.util.*;
+public class Conditional_Statements {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        int day;
+        System.out.println("Enter a number from 1-7: ");
+        day = sc.nextInt();
+        if (day == 1) {
+            System.out.println("Monday");
+        } else if (day == 2) {
+            System.out.println("Tuesday");
+        } else if (day == 3) {
+            System.out.println("Wednesday");
+
+        } else if (day == 4) {
+            System.out.println("Thursday");
+
+        } else if (day == 5) {
+            System.out.println("Friday");
+        } else if (day == 6) {
+            System.out.println("Saturday");
+        } else if (day == 7) {
+            System.out.println("Sunday");
+
+        }
+    }
+}
+*FIND RADIX*
+import java.util.*;
+public class Conditional_Statements {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        String num;
+//        System.out.println("Enter a number :");
+//        num =sc.nextLine();
+//        if (num.matches("[01]+")) {
+//            System.out.println("binary");
+//        } else if (num.matches("[0-7]+")) {
+//            System.out.println("Octal");
+//
+//        } else if (num.matches("[0-9A-F]+")){
+//            System.out.println("Hexadecimal");
+//        } else if (num.matches("[0-9]+")) {
+//            System.out.println("Decimal");
+//
+//        }
+        }
+      }
+*TYPE OF WEBSITE*
+import java.util.*;
+public class Conditional_Statements {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        System.out.println("Enter a url: ");
+        String url = sc.nextLine();
+        String protocol = url.substring(0, url.indexOf(":"));
+        if (protocol.equals("http"))
+            System.out.println("Hypertext Transfer Protocol");
+        else if (protocol.equals("ftp"))
+            System.out.println("Files Transfer Protocol");
+
+        String ext = url.substring(url.lastIndexOf(".") + 1);
+        if (ext.equals("com"))
+            System.out.println("Commercial");
+        else if (ext.equals("org"))
+            System.out.println("Organization");
+
+        else if (ext.equals("net"))
+            System.out.println("Network");
+
     }
 }
