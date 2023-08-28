@@ -1,3 +1,4 @@
+*DISPLAY NAME OF DAYS BY NUMBERS*
 import java.util.*;
 public class Switch_statements {
     public static void main(String[] args) {
@@ -20,6 +21,118 @@ public class Switch_statements {
             case 6 : System.out.println("Saturday");
             break;
             case 7 : System.out.println("Sunday");
+            default:
+                System.out.println("invalid");
+        }
+    }
+}
+*DISPLAY NAME OF MONTH BY NUMBERS*
+import java.util.*;
+public class Switch_statements {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        System.out.println("Enter a number: ");
+        int month = sc.nextInt();
+        switch (month){
+            case 1:
+                System.out.println("January");
+                break;
+            case 2:
+                System.out.println("Febuary");
+                break;
+            case 3:
+                System.out.println("March");
+                break;
+            case 4:
+                System.out.println("April");
+                break;
+            case 5:
+                System.out.println("May");
+                break;
+            case 6:
+                System.out.println("June");
+                break;
+            case 7:
+                System.out.println("July");
+            case 8:
+                System.out.println("August");
+                break;
+            case 9:
+                System.out.println("September");
+                break;
+            case 10:
+                System.out.println("Octuber");
+                break;
+            case 11:
+                System.out.println("November");
+                break;
+            case 12:
+                System.out.println("December");
+            default:
+                System.out.println("Invalid");
+        }
+    }
+}
+*DISPLAY TYPS OF WEBSITES*
+import java.util.*;
+public class Switch_statements {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        String url;
+        System.out.println("Enter a domain: ");
+        url = sc.nextLine();
+        String ext=url.substring(url.lastIndexOf(".")+1);
+        switch (ext){
+            case "com":
+                System.out.println("Commercial");
+                break;
+            case "org":
+                System.out.println("Organization");
+                break;
+            case "net":
+                System.out.println("Network");
+                break;
+            case "gov":
+                System.out.println("Government");
+                break;
+            default:
+                System.out.println("Invalid");
+        }
+
+
+    }
+}
+*MENU DRIVEN PROGRAM*
+import java.util.*;
+public class Switch_statements {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        System.out.println("Menu");
+        System.out.println("====");
+        System.out.println("Add");
+        System.out.println("Sub");
+        System.out.println("Mul");
+        System.out.println("Div");
+        System.out.println("Enter Two numbers: ");
+        int x= sc.nextInt();
+        int y= sc.nextInt();
+        sc.nextLine();
+        String option;
+        System.out.println("Select your option in word: ");
+        option=sc.nextLine();
+        switch (option){
+            case "Add":
+                System.out.println(x+y);
+                break;
+            case "Sub":
+                System.out.println(x-y);
+                break;
+            case "Mul":
+                System.out.println(x*y);
+                break;
+            case "Div":
+                System.out.println(x/y);
+                break;
             default:
                 System.out.println("invalid");
         }
