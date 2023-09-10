@@ -1,0 +1,105 @@
+*FACTORIAL OF A NUMBER* 
+import java.util.*;
+public class loops {
+    public static void main(String[] args) {
+        Scanner sc=new Scanner(System.in);
+        System.out.println("Select N: ");
+        int n= sc.nextInt();
+        int fact = 1;
+        for (int i = 1; i <= n; i++) {
+            fact = fact * i;
+        }
+        System.out.println("The factorial of " + n + " is " + fact);
+    }
+}
+*SUM OF N NUMBERS*
+import java.util.*;
+public class loops {
+    public static void main(String[] args) {
+ Scanner sc = new Scanner(System.in);
+        System.out.println("Select N: ");
+        int n = sc.nextInt();
+        int sum = 0;
+        for (int i = 1; i <= n; i++) {
+            sum = sum + i;
+        }
+        System.out.println("The sum of " + n + " is " + sum);
+    }
+}
+*MULTIPLICATION TABLE*
+import java.util.*;
+public class loops {
+    public static void main(String[] args) {
+ int n=5;
+        for (int i=1; i<=10; i++){
+            System.out.println(n+"x"+i+"="+n*i);
+    }
+}
+*DISPLAY DIGITS OF A NUMBER*
+import java.util.*;
+public class loops {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        System.out.println("Select N: ");
+        int n = sc.nextInt();
+        while (n > 0) {
+            int r = n % 10;
+            n = n / 10;
+            System.out.println(r);
+        }
+    }
+}
+import java.util.*;
+public class loops {
+public static void main(String[] args) {
+        Scanner sc =new Scanner(System.in);
+        int sum =0;
+        System.out.println("The number is Armstrong or not: ");
+        int n = sc.nextInt();
+        int m=n;
+        while (n > 0){
+            int r=n%10;
+            sum= sum+r*r*r;
+            n=n/10;
+        }
+        System.out.println(sum);
+        if (m==sum){
+            System.out.println("This is an Armstrong number. ");
+        }else {
+            System.out.println("Not an Armstrong. ");
+        }
+    }
+}
+import java.util.*;
+public class loops {
+public static void main(String[] args) {
+ Scanner sc =new Scanner(System.in);
+        System.out.println("Select N: ");
+        int n = sc.nextInt();
+        int count=0;
+
+        while (n > 0){
+            n=n/10;
+            count++;
+        }
+        System.out.println(count);
+        }
+    }
+}
+*REVERSING A NUMBER*
+import java.util.*;
+public class loops {
+    public static void main(String[] args) {
+        Scanner sc =new Scanner(System.in);
+        System.out.println("Select N: ");
+        int n= sc.nextInt();
+        int rev=0;
+        int r;
+        while (n>0){
+            r=n%10;
+            n=n/10;
+            rev = (rev * 10) + r;
+        }
+        System.out.println(rev);
+    }
+}
