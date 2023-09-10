@@ -103,3 +103,26 @@ public class loops {
         System.out.println(rev);
     }
 }
+*PALINDROME*
+import java.util.*;
+public class loops {
+    public static void main(String[] args) {
+        Scanner sc =new Scanner(System.in);
+        System.out.println("Select N: ");
+        int n= sc.nextInt();
+        int rev=0;
+        int r;
+        int m=n;
+        while (n>0){
+            r=n%10;
+            n=n/10;
+            rev = (rev * 10) + r;
+        }
+        if (rev==m){
+            System.out.println("This is Palindrom");
+        }else
+        {
+            System.out.println("Not Palindrome");
+        }
+    }
+}
