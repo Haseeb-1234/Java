@@ -11,3 +11,29 @@ public class Method {
 
     }
 }
+public class String_objects {
+    static  double area(double l, double b)
+    {
+        double area =l*b;
+
+        return area;
+    }
+    static double area(double radius)
+    {
+        double area=Math.PI*radius*radius;
+        return area;
+    }
+    static double area(double a, double b,double h )
+    {
+        double area=0.5*(a+b)*h;
+        return area;
+    }
+    public static void main(String[] args) {
+//        int l=10,b=5;
+//        int radius=5;
+        int a=10,b=5,h=5;
+        System.out.println(area(a,b,h));
+
+
+    }
+}
