@@ -37,3 +37,62 @@ public class String_objects {
 
     }
 }
+*SUM OF ALL ELEMENTS IN VARRAY*
+public class String_objects {
+    static int sum (int... A)
+    {
+        int s=0;
+        for (int i=0; i<A.length; i++) {
+            s += A[i];
+        }
+        return s;
+    }
+
+    public static void main(String[] args) {
+        System.out.println(sum());
+        System.out.println(sum(10,20));
+        System.out.println(sum(10,20,30));
+
+    }
+}
+*VALIDATE AGE AND NAME*
+ static boolean validate(String name){
+        return name.matches("[a-zA-Z\\s]*");
+    }
+    static boolean validate(int age){
+        return (age>=3 && age<=15);
+    }
+
+    public static void main(String[] args) {
+        int age=16;
+        String name="haseeb12";
+        System.out.println(validate(name));
+
+    }
+*REVERSE OF AN ARRAY*
+static int reverse(int n) {
+        int reverse = 0;
+        while (n > 0) {
+            int r = n % 10;
+            n = n / 10;
+            reverse = (reverse * 10) + r;
+        }
+        return reverse;
+
+    }
+    static int[]  reverse(int[] A)
+
+    {
+        int []B=new int[A.length];
+        for(int i=A.length-1,j=0;i>=0;i--,j++)
+        {
+            B[j]=A[i];
+        }
+        return B;
+    }
+    public static void main(String[] args) {
+      int n=237;
+        int[] A={1, 2, 3, 4, 5, 6, 7, 8, 9, 10};
+        System.out.println(Arrays.toString(reverse(A)));
+    }
+}
