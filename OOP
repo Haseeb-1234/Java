@@ -1,0 +1,98 @@
+class cylinder
+{
+    public double radius;
+    public double height;
+    public double lidArea()
+    {
+        return 2*Math.PI*radius*height;
+    }
+    public double surfaceArea()
+    {
+        return lidArea()+2*Math.PI*radius*radius;
+    }
+    public double volume()
+    {
+        return Math.PI*radius*radius*height;
+    }
+}
+public class OOP {
+    public static void main(String[] args) {
+        cylinder c=new cylinder();
+        c.height=20;
+        c.radius=10;
+        System.out.println(c.lidArea());
+        System.out.println(c.surfaceArea());
+        System.out.println(c.volume());
+    }
+
+}
+class rectangle
+{
+    public double lenght;
+    public double breadth;
+    public double area()
+    {
+        return lenght*breadth;
+    }
+    public double perimetre()
+    {
+        return 2*(lenght+breadth);
+    }
+    public boolean isSquare()
+    {
+        return lenght==breadth;
+    }
+
+}
+public class OOP {
+
+
+    public static void main(String[] args) {
+        rectangle r=new rectangle();
+        r.lenght=10.1;
+        r.breadth=5.6;
+        System.out.println(r.area());
+        System.out.println(r.perimetre());
+        System.out.println(r.isSquare());
+
+    }
+}
+class student
+{
+  public int Roll_number;
+    public String  Name;
+    public String  course;
+    public int m1,m2,m3;
+    public int Total()
+    {
+        return m1+m2+m3;
+    }
+    public int average()
+    {
+        return Total()/3;
+    }
+    public char grade()
+    {
+        if (average()>=60) {
+            return 'A';
+        } else
+            return 'B';
+    }
+}
+public class OOP {
+    public static void main(String[] args) {
+        student s=new student();
+        s.Name="HASEEB AHSAN";
+        s.course="CS";
+        s.Roll_number=157;
+        s.m1=70;
+        s.m2=80;
+        s.m3=60;
+        System.out.println("Roll_number:"+ s.Roll_number);
+        System.out.println("Name: "+ s.Name);
+        System.out.println("Course: "+s.course);
+        System.out.println("Total: "+s.Total());
+        System.out.println(s.average());
+        System.out.println(s.grade());
+    }
+}
