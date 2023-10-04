@@ -96,3 +96,60 @@ public class OOP {
         System.out.println(s.grade());
     }
 }
+class rectangle
+{
+   private double lenght;
+    private double breadth;
+
+    public double getLenght()
+    {
+        return lenght;
+    }
+    public double getBreadth() {
+        return breadth;
+    }
+
+
+    public void setBreadth(double b) {
+        if (breadth>=0){
+            breadth=b;
+        }else
+            breadth=0;
+    }
+
+    public void setLenght(double l) {
+        if(l>=0){
+            lenght=l;
+        }else
+            lenght=0;
+    }
+
+    public double area()
+    {
+        return lenght*breadth;
+    }
+    public double perimetre()
+    {
+        return 2*(lenght+breadth);
+    }
+    public boolean isSquare()
+    {
+        return lenght==breadth;
+    }
+
+}
+public class OOP {
+
+
+    public static void main(String[] args) {
+        rectangle r=new rectangle();
+        r.setLenght(-10.5);
+        r.setBreadth(5.5);
+        System.out.println(r.area());
+        System.out.println(r.perimetre());
+        System.out.println("Is it a Square: "+r.isSquare());
+        System.out.println(r.getLenght());
+        System.out.println(r.getBreadth());
+
+    }
+}
