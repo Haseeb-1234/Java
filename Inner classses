@@ -1,0 +1,77 @@
+*NESTED INNER CLASS*
+class outer {
+    int x=20;
+    class Inner{
+        int y=5;
+        public void InnerDisplay(){
+            System.out.println(x+""+y);
+        }
+    }
+    public void outerDisplay()
+    {
+        Inner i=new Inner();
+        i.InnerDisplay();
+    }
+}
+public class Inner_classes {
+    public static void main(String[] args) {
+        Outer o=new Outer();
+        o.OuterDisplay();
+    }
+}
+*LOCAL INNER CLASS*
+class Outer{
+    void Display(){
+        class inner{
+            public void innerDisplay(){
+                System.out.println("Hello");
+            }
+        }
+        inner i=new inner();
+        i.innerDisplay();
+    }
+}
+public class Inner_classes {
+    public static void main(String[] args){
+        Outer o=new Outer();
+        o.Display();
+    }
+}
+*ANONYMOUS INNER CLASS*
+abstract class My{
+    abstract void Display();
+}
+class Outer{
+    public void meth(){
+        My m = new My() {
+            @Override
+            void Display() {
+                System.out.println("HELLO");
+            }
+        };
+        m.Display();
+    }
+}
+public class Inner_classes {
+    public static void main(String[] args){
+        Outer o=new Outer();
+        o.meth();
+    }
+}
+*STATIC INNER CLASS*
+class Outer{
+    static int x=10;
+    static int y=20;
+    static class Inner{
+        public void Display(){
+            System.out.println(x);
+            System.out.println(y);
+        }
+    }
+}
+public class Inner_classes {
+    public static void main(String[] args){
+        Outer.Inner i=new Outer.Inner();
+        i.Display();
+    }
+}
