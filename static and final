@@ -1,0 +1,71 @@
+class test{
+    static int x=10;
+    int y=20;
+    //static method can access static member of a class
+    void show(){
+        System.out.println(x+" "+y);
+    }
+    //static method cannot access a non static member but non-static method can
+    static void display(){
+        System.out.println(x);
+    }
+}
+public class finalandstatic_class {
+    public static void main(String []args){
+        test t1 =new test();
+        t1.show();
+        t1.x =30;
+        t1.y=50;
+        test t2= new test();
+        t2.show();
+    }
+}
+class HondaCity {
+    static long price = 10;
+    int a, b;
+
+    static double OnRoadPrice(String City) {
+        switch (City) {
+            case "Lahore":
+                return price + price * 0.01;
+            case "Islamabad":
+                return price + price * 0.09;
+        }
+        return 0;
+    }
+}
+public class finalandstatic_class {
+    public static void main(String[] args){
+        HondaCity h1= new HondaCity();
+        HondaCity h2= new HondaCity();
+        System.out.println(HondaCity.price);//static members can access just by using class name without creating any method.
+        System.out.println(HondaCity.OnRoadPrice("Lahore"));
+        System.out.println(HondaCity.OnRoadPrice("Islamabad"));
+    }
+}
+class test{
+    static {
+        System.out.println("Block 1");
+    }
+    static
+    {
+        System.out.println("Block 2");
+    }
+
+
+}
+public class finalandstatic_class {
+//    static {
+//        System.out.println("Block 1");
+//    }
+
+    public static void main(String[] args) {
+//        test t =new test();
+        System.out.println("Main");
+        test t =new test();
+    }
+//        static
+//        {
+//            System.out.println("Block 2");
+//        }
+    }
