@@ -1,0 +1,38 @@
+//
+//public class Main {
+//    public static void main(String[] args) {
+//        try {//multiple try catch
+//            int[] A = {30, 20, 10, 40, 0};
+//            int c = A[0] / A[2];
+//            System.out.println("Division is " + c);
+//            System.out.println(A[5]);
+//        }
+//        catch (ArithmeticException e){
+//            System.out.println("Denominator shouldn't  be zero");
+//        }
+//        catch (ArrayIndexOutOfBoundsException e){
+//            System.out.println("Index is invalid");
+//        }
+//    }
+//}
+
+public class Main {
+    public static void main(String[] args) {
+        try {
+            int[] A = {30, 20, 10, 40, 0};
+            int c = A[0] / A[2];
+            System.out.println("Division is " + c);
+            try {//nested try catch
+                System.out.println(A[1]);
+            }
+            catch (ArrayIndexOutOfBoundsException e){
+                System.out.println("Index is invalid");
+            }
+
+        }
+        catch (ArithmeticException e){
+            System.out.println("Denominator shouldn't  be zero");
+        }
+
+    }
+}
