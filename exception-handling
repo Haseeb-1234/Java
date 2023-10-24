@@ -36,3 +36,63 @@ public class Main {
 
     }
 }
+class lowBalanceException extends Exception{
+    public String toString()
+    {
+        return "balance should be les than 5000";
+    }
+}
+
+public class Main {
+    static void fun1(){
+        try{
+            throw new lowBalanceException();
+        }
+        catch (lowBalanceException e)
+        {
+            System.out.println(e.toString());
+        }
+//        try {//unchecked exception.
+//            System.out.println(10/0);
+//        }
+//        catch (Exception e){
+//            System.out.println(e.getMessage());
+//            System.out.println(e.printStackTrace());
+//        }
+    }
+    static void fun2(){
+        fun1();
+    }
+    static void fun3(){
+        fun2();
+    }
+    public static void main(String[] args) {
+        fun3();
+    }
+}
+class NegativeDimensionException extends Exception{
+    public String toString(){
+        return "Dimension can't be negative";
+    }
+    public static class Main{
+        static int area(int l, int b) throws NegativeDimensionException
+        {
+            if (l<0 || b<0)
+                throw new NegativeDimensionException();
+            return l*b;
+        }
+        static void meht1() throws NegativeDimensionException
+        {
+            System.out.println("Area is "+ area(-10,5));
+        }
+        public static void main(String[] args)throws NegativeDimensionException {
+            try {
+                meht1();
+            }
+            catch (Exception e){
+                System.out.println(e);
+            }
+        }
+
+    }
+}
