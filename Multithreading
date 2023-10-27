@@ -1,0 +1,147 @@
+//class Mythread extends Thread
+//{
+//    public void run() {
+// whenever you extends a class from thread class and you want to achieve multithreading then
+//you must override run(method)
+//        int i = 1;
+//        while (true) {
+//            System.out.println(i + "Hello");
+//            i++;
+//        }
+//    }
+//}
+//public class Multithreading {
+//    public static void main(String[] args) {
+//        Mythread t=new Mythread();
+//        t.start();
+//        int i=1;
+//        while (true)
+//        {
+//            System.out.println(i+"World");
+//            i++;
+//        }
+//    }
+//}
+//public class Multithreading extends Thread
+//{
+//    public void run()
+//    {
+//        int i=1;
+//        while (true)
+//        {
+//            System.out.println(i+"Haseeb");
+//            i++;
+//        }
+//    }
+//
+//    public static void main(String[] args) {
+//        Multithreading mt=new Multithreading();
+//        mt.start();
+//        int i=1;
+//        while (true)
+//        {
+//            System.out.println(i+"Ahsan");
+//            i++;
+//        }
+//    }
+//
+//}
+class My implements Runnable
+{
+    public void run()
+    {
+        int i=1;
+        while (true)
+        {
+            System.out.println(i+"Hello");
+            i++;
+        }
+    }
+}
+public class Multithreading {
+    public static void main(String[] args) {
+        My m=new My();
+        Thread t=new Thread(m);
+        t.start();
+        int i=1;
+        while (true)
+        {
+            System.out.println(i+"World");
+            i++;
+        }
+    }
+}
+class Mythread extends Thread
+{
+    public Mythread(String name)
+    {
+        super(name);
+    }
+    public void run()
+    {
+        int i=1;
+        while (true)
+        {
+            System.out.println(i);
+            i++;
+            try {
+                Thread.sleep(500);
+            }catch (InterruptedException e)
+            {
+                System.out.println(e);
+            }
+        }
+    }
+}
+public class Main {
+    public static void main(String[] args) {
+        Mythread t=new Mythread("Thraed 1");
+        t.start();
+        t.interrupt();
+    }
+}
+class Mydata
+{
+    synchronized public void Display(String str)
+    {
+        for (int i=0; i<str.length(); i++)
+        {
+            System.out.print(str.charAt(i));
+        }
+    }
+}
+class MyThread1 extends Thread
+{
+    Mydata d;
+    public MyThread1(Mydata d)
+{
+    this.d=d;
+}
+    public void run()
+    {
+        d.Display("Hello World");
+    }
+}
+class MyThread2 extends Thread
+{
+    Mydata d;
+    public MyThread2(Mydata d)
+    {
+        this.d=d;
+    }
+    public void run()
+    {
+        d.Display("Welcome");
+    }
+}
+
+public class Main {
+    public static void main(String[] args) {
+        Mydata data=new Mydata();
+        MyThread1 t1= new MyThread1(data);
+        MyThread2 t2= new MyThread2(data);
+        t1.start();
+        t2.start();
+
+    }
+}
