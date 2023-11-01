@@ -1,0 +1,146 @@
+import java.io.*;
+import java.nio.charset.StandardCharsets;
+
+public class IOSTREAMS {
+    public static void main(String[] args)throws Exception
+    {
+        FileInputStream fis= new FileInputStream("C:/MyJava/Test.txt");
+        BufferedInputStream bis = new BufferedInputStream(fis);
+        System.out.println((char) bis.read());
+        System.out.println((char) bis.read());
+        System.out.println((char) bis.read());
+        bis.mark(10);
+        System.out.println((char) bis.read());
+        System.out.println((char) bis.read());
+        bis.reset();
+        System.out.println((char) bis.read());
+        System.out.println((char) bis.read());
+    }
+}
+import java.io.*;
+import java.nio.charset.StandardCharsets;
+
+public class IOSTREAMS {
+    public static void main(String[] args)throws Exception
+    {
+        FileReader fr=new FileReader("C:/MyJava/Test.txt");
+        BufferedReader bis =new BufferedReader(fr);
+        System.out.println((char) bis.read());
+        System.out.println((char) bis.read());
+        System.out.println((char) bis.read());
+        bis.mark(10);
+        System.out.println((char) bis.read());
+        System.out.println((char) bis.read());
+        bis.reset();
+        System.out.println((char) bis.read());
+        System.out.println((char) bis.read());
+    }
+}
+import java.io.*;
+import java.nio.charset.StandardCharsets;
+class Producer extends Thread
+{
+    OutputStream os;
+    public Producer(OutputStream o)
+    {
+        os=o;
+    }
+    public void run()
+    {
+        int count = 0;
+        while (true)
+        {
+            try{
+                os.write(count);
+                os.flush();
+                System.out.println("Producer "+count);
+                System.out.flush();
+                count++;
+                Thread.sleep(100);
+
+            }catch (Exception e) {}
+        }
+    }
+}
+class Consumer extends Thread {
+    InputStream is;
+
+    public Consumer(InputStream s) {
+        is = s;
+    }
+
+    public void run() {
+        int x;
+        while (true) {
+            try {
+                x = is.read();
+                System.out.println("Consumer " + x);
+                System.out.flush();
+                Thread.sleep(100);
+            } catch (Exception e) {
+            }
+        }
+    }
+}
+
+    public  class IOSTREAMS {
+        public static void main(String[] args) throws Exception {
+            PipedInputStream pis = new PipedInputStream();
+            PipedOutputStream pos = new PipedOutputStream();
+            pis.connect(pos);
+
+            Producer p = new Producer(pos);
+            Consumer c = new Consumer(pis);
+            p.start();
+            c.start();
+
+        }
+    }
+//RANDOM ACCESS
+public class IOSTREAMS {
+    public static void main(String[] args) throws Exception
+    {
+        RandomAccessFile rf=new RandomAccessFile("C:\\MyJava\\Data.txt","rw");
+        System.out.println((char) rf.read());
+        System.out.println((char) rf.read());
+        System.out.println((char) rf.read());
+        rf.write('d');
+        System.out.println((char) rf.read());
+        System.out.println((char) rf.read());
+        rf.skipBytes(3);
+        System.out.println((char) rf.read());
+        rf.seek(3);
+        System.out.println((char) rf.read());
+        System.out.println( rf.getFilePointer());
+        rf.seek(rf.getFilePointer()+2);
+        System.out.println((char) rf.read());
+    }
+}
+class Student
+{
+    int rollno;
+    String name;
+    String dept;
+}
+public class IOSTREAMS {
+    public static void main(String[] args) throws Exception
+    {
+        FileInputStream fis=new FileInputStream("C:/MyJava/Student1.txt");
+        BufferedReader br=new BufferedReader(new InputStreamReader(fis));
+        Student s= new Student();
+        s.rollno=Integer.parseInt(br.readLine());
+        s.name=br.readLine();
+        s.dept=br.readLine();
+        System.out.println("Roll no "+s.rollno);
+        System.out.println("Roll no "+s.name);
+        System.out.println("Roll no "+s.dept);
+        fis.close();
+        br.close();
+//        s.rollno=10;
+//        s.name="haseeb";
+//        s.dept="CSE";
+//        ps.println(s.rollno);
+//        ps.println(s.name);
+//        ps.println(s.dept);
+    }
+}
