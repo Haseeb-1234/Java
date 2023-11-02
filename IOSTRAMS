@@ -144,3 +144,125 @@ public class IOSTREAMS {
 //        ps.println(s.dept);
     }
 }
+class Student
+{
+    int rollno;
+    String name;
+    String dept;
+}
+public class IOSTREAMS {
+    public static void main(String[] args) throws Exception
+            //DataStream demo allows us to write on the data in its own data type.
+    {
+//        FileOutputStream fos = new FileOutputStream("C:/MyJava/Student2.txt");
+//        DataOutputStream dos= new DataOutputStream(fos);
+//
+//        Student s=new Student();
+//        s.name="haseeb";
+//        s.rollno=10;
+//        s.dept="CSE";
+//        dos.write(s.rollno);
+//        dos.writeUTF(s.name);
+//        dos.writeUTF(s.dept);
+    }
+  }
+}
+class Student {
+    int rollno;
+    String name;
+    String dept;
+}
+//Data output stream demo
+
+public class IOSTREAMS {
+    public static void main(String[] args) {
+        try {
+            // Writing data to the file
+            FileOutputStream fos = new FileOutputStream("C:/MyJava/Student2.txt");
+            DataOutputStream dos = new DataOutputStream(fos);
+
+            Student s = new Student();
+            s.rollno = 10;
+            s.name = "haseeb";
+            s.dept = "CSE";
+
+            dos.writeInt(s.rollno);
+            dos.writeUTF(s.name);
+            dos.writeUTF(s.dept);
+
+            dos.close();
+
+            // Reading data from the file
+            FileInputStream fis = new FileInputStream("C:/MyJava/Student2.txt");
+            DataInputStream dis = new DataInputStream(fis);
+
+            Student student = new Student();
+
+            // Use a loop to read until the end of the file
+            while (true) {
+                try {
+                    student.rollno = dis.readInt();
+                    student.name = dis.readUTF();
+                    student.dept = dis.readUTF();
+
+                    System.out.println("Roll no: " + student.rollno);
+                    System.out.println("Name: " + student.name);
+                    System.out.println("Department: " + student.dept);
+                } catch (EOFException e) {
+                    // EOF reached, exit the loop
+                    break;
+                }
+            }
+
+            dis.close();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+}
+*STUDENT CHALLENGE*
+//class Student implements Serializable
+//{
+//    private int rollno;
+//    private String name;
+//    private float average;
+//    private String dept;
+//    public static int Data=30;
+//    public Student()
+//    {
+//
+//    }
+//    public Student(int r,String n,float a, String d)
+//    {
+//        rollno=r;
+//        name=n;
+//        average=a;
+//        dept=d;
+//
+//    }
+//    public String toString()
+//    {
+//        return "\nStudent Details\n"+
+//        "\nRoll no :\n"+rollno+
+//        "\nName :\n"+name+
+//        "\nAverage :\n"+average+
+//        "\nDepartment :\n"+dept;
+//    }
+//public static class IOSTREAMS{
+//    public static void main(String[] args) throws Exception
+//    {
+//        FileInputStream fis=new FileInputStream("C:/MyJava/Student3.txt");
+//        ObjectInputStream ois =new ObjectInputStream(fis);
+//        Student s= (Student) ois.readObject();
+//        System.out.print(s);
+//        FileOutputStream fos=new FileOutputStream("C:/MyJava/Student3.txt");
+//        ObjectOutputStream oos= new ObjectOutputStream(fos);
+//        Student s=new Student(10,"John",90.9f,"CSE");
+//        oos.writeObject(s);
+//        fos.close();
+//        oos.close();
+
+//    }
+//}
+//
+//}
